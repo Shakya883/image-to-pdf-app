@@ -21,11 +21,6 @@ jobs:
       - name: Install dependencies
         run: npm install -g serve
 
-      - name: Build and deploy
-        run: |
-          npx serve src --single
-          echo 'Build and deploy completed'
-
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
