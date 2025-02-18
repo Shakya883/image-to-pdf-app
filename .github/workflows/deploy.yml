@@ -5,30 +5,15 @@ on:
     branches:
       - main
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+permissions:
+  contents: write
 
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Install Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: "14"
-
-      - name: Create gh-pages branch if it doesn't exist
-        run: |
-          git fetch origin
-          if [ `git branch -r | grep origin/gh-pages` ]; then
-            echo "gh-pages branch exists"
-          else
-            git checkout --orphan gh-pages
-            git reset --hard
-            git commit --allow-empty -m "Initial gh-pages commit"
-            git push origin gh-pages
-          fi
+        uses: actions/checkout@v3
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
