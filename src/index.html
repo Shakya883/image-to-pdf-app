@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image to PDF Converter</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body
+    class="flex flex-col items-center justify-center min-h-screen bg-gray-100"
+  >
+    <div class="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
+      <h1 class="text-xl font-bold mb-4 text-center">Image to PDF Converter</h1>
+
+      <!-- Styled file input container -->
+      <div class="mb-4">
+        <label
+          for="imageUpload"
+          class="block w-full cursor-pointer bg-blue-50 border border-blue-300 text-blue-700 py-2 px-4 rounded text-center hover:bg-blue-100"
+        >
+          Choose Images
+          <input
+            type="file"
+            id="imageUpload"
+            accept="image/jpeg, image/png"
+            multiple
+            class="hidden"
+            aria-label="Upload images"
+          />
+        </label>
+      </div>
+
+      <div id="imagePreview" class="mb-4 grid gap-2"></div>
+
+      <div class="mb-4">
+        <label for="pdfSize" class="block mb-2 font-medium"
+          >Select PDF Size:</label
+        >
+        <select
+          id="pdfSize"
+          class="w-full p-2 border rounded"
+          aria-label="Select PDF size"
+        >
+          <option value="original">Original Size</option>
+          <option value="compressed">Compressed (under 1MB)</option>
+        </select>
+      </div>
+
+      <button
+        id="convertButton"
+        class="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition-colors"
+        aria-label="Convert and download PDF"
+      >
+        Convert & Download PDF
+      </button>
+    </div>
+
+    <!-- Required Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://unpkg.com/compressorjs/dist/compressor.min.js"></script>
+    <script src="app.js"></script>
+
+    <!-- Loading indicator -->
+    <div
+      id="loading"
+      class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 hidden flex items-center justify-center"
+    >
+      <div class="bg-white p-4 rounded">Processing...</div>
+    </div>
+  </body>
+</html>

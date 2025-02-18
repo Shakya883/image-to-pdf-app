@@ -1,0 +1,25 @@
+{
+  "name": "image-to-pdf-app",
+  "version": "1.0.0",
+  "description": "A lightweight web app for converting images to PDF format with options for size control.",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "live-server src"
+  },
+  "dependencies": {
+    "jspdf": "^2.5.1",
+    "compressorjs": "^1.1.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^2.2.19"
+  },
+  "keywords": [
+    "image",
+    "pdf",
+    "conversion",
+    "client-side",
+    "responsive"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
