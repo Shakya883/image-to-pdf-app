@@ -21,8 +21,8 @@ A lightweight, client-side web application that converts images (JPG/PNG) to PDF
 ## Quick Start
 
 1. Clone the repository:
-   ```
-   git clone https://github.com/yourusername/image-to-pdf-app.git
+   ```bash
+   git clone https://github.com/Shakya883/image-to-pdf-app.git
    ```
 2. Navigate to the project directory:
    ```
